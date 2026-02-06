@@ -1,2 +1,37 @@
 # webpage
-repo to setup a simple webpage for our local hackerspace with next.js
+Repository for the Hackzogtum website. This is a Next.js project (no C project is included in this repo).
+
+## Build and run
+
+All commands are executed at the repository root:
+
+1. Install dependencies:
+	- `npm install`
+
+2. Development server:
+	- `npm run dev`
+
+3. Production build:
+	- `npm run build`
+
+4. Start production server:
+	- `npm run start`
+	- or `npm run start-prod` (binds to localhost:8182)
+
+## Modules used
+
+Runtime dependencies:
+- next, react, react-dom
+- tailwindcss (via build tooling)
+- remark, remark-html, gray-matter (Markdown/blog processing)
+- micromark, micromark-extension-gfm (Markdown parsing)
+- date-fns (date utilities)
+- ical.js (iCal parsing)
+- sharp (image processing)
+- @fortawesome/* (icons)
+- classnames (CSS class helper)
+
+Dev tooling:
+- typescript, @types/*
+- eslint, eslint-config-next
+- tailwindcss, autoprefixer, postcss-preset-env
