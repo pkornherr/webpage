@@ -1,9 +1,7 @@
 # webpage
-Repository for the Hackzogtum website. This is a Next.js project (no C project is included in this repo).
+Repository for the Hackzogtum website. This is a Next.js project.
 
 ## Build and run
-
-All commands are executed at the repository root:
 
 1. Install dependencies:
 	- `npm install`
