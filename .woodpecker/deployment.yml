@@ -31,10 +31,6 @@ steps:
        TOKEN_ENV:
          from_secret: SSH-Key
     
-  - name: Publish
-    image: node:20
-    commands:
-      - cat hackzogtum-webpage.tar.gz | ssh -i ~/.ssh/id_ed25519 website@95.217.86.151
 
 when:
   - event: push
