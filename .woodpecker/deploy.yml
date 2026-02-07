@@ -1,0 +1,6 @@
+steps:
+  - name: Preconfigure
+    image: node
+    commands:
+      - npm ci
+      - npm run build
