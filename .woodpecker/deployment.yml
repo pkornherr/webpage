@@ -20,5 +20,13 @@ steps:
     commands:
       - tar -czf hackzogtum-webpage.tar.gz deploy/
 
+  - name: Publish
+    image: node:20
+    commands:
+      - ssh -i $${TOKEN_ENV} website@95.217.86.151
+    environment:
+       TOKEN_ENV:
+         from_secret: SSH-Key
+
 when:
   - branch: main
