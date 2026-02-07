@@ -1,11 +1,11 @@
 steps:
   - name: Preconfigure
-    image: node
+    image: node:20
     commands:
       - npm ci
 
   - name: Build
-    image: node
+    image: node:20
     commands:
       - npm run build
 
@@ -37,4 +37,5 @@ steps:
       - cat hackzogtum-webpage.tar.gz | ssh -i ~/.ssh/id_ed25519 website@95.217.86.151
 
 when:
-  - branch: main
+  - event: push
+    branch: main
