@@ -8,8 +8,6 @@ import { getPostBySlug, getAllPosts, IPost } from '../../lib/blog-utils'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons"
 
 interface PostProps {
   post: IPost,
@@ -27,7 +25,7 @@ export default function Post({ post }: PostProps) {
                 color: 'var(--color-text-secondary)',
                 textDecoration: 'none'
               }}>
-          <FontAwesomeIcon icon={faArrowLeft} className="text-primary" />
+          <i className="bi bi-arrow-left text-primary" aria-hidden="true" />
           <span>Zurück zur Übersicht</span>
         </Link>
         {router.isFallback ? (

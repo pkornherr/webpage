@@ -26,7 +26,7 @@ Runtime dependencies:
 - date-fns (date utilities)
 - ical.js (iCal parsing)
 - sharp (image processing)
-- @fortawesome/* (icons)
+- bootstrap-icons (icons)
 - classnames (CSS class helper)
 
 Dev tooling:
