@@ -1,0 +1,15 @@
+steps:
+  - name: Preconfigure
+    image: node
+    commands:
+      - npm ci
+  - name: Build
+    image: node
+    commands:
+      - npm run build
+  - name: Compress
+    image: node
+    commands:
+      - tar -czf hackzogtum-webpage.tar.gz .
+when:
+  - branch: main

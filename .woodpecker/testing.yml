@@ -7,3 +7,9 @@ steps:
     image: node
     commands:
       - npm run build
+
+when:
+  - event: pull_request
+  - event: push
+    branch:
+      exclude: [main]
