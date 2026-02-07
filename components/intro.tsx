@@ -207,7 +207,7 @@ export default function Intro() {
             {/* Space Status */}
             <div className="status-card">
               <div className="status-item">
-                <i className="bi bi-door-open status-icon" aria-hidden="true" />
+                <i className="bi bi-door-open-fill status-icon" aria-hidden="true" />
                 <span>Die Space Tür ist </span>
                 <span className={`status-badge ${data.open ? 'status-open' : 'status-closed'}`}>
                   {data.open ? 'offen' : 'geschlossen'}
@@ -216,7 +216,7 @@ export default function Intro() {
 
               {data.open && (
                 <div className="status-item">
-                  <i className="bi bi-telephone status-icon" aria-hidden="true" />
+                  <i className="bi bi-telephone-fill status-icon" aria-hidden="true" />
                   <span>Call our canphone: </span>
                   <a href="tel:+49221596192432" className="phone-link">
                     +49 221 596 192 432
@@ -227,7 +227,7 @@ export default function Intro() {
               {/* People Present */}
               {data.open && (
                 <div className="status-item">
-                  <i className="bi bi-people status-icon" aria-hidden="true" />
+                  <i className="bi bi-people-fill status-icon" aria-hidden="true" />
                   <span>Anwesend: </span>
                   <div className="inline-flex flex-wrap gap-1">
                     {data.sensors["in space"].map((item: boolean | ReactChild | ReactFragment | ReactPortal | null | undefined, index: Key | null | undefined) => (
@@ -243,7 +243,7 @@ export default function Intro() {
               { nextEvents && (
                 <>
                   <div className="status-item">
-                    <i className="bi bi-calendar-event status-icon" aria-hidden="true" />
+                    <i className="bi bi-calendar-event-fill status-icon" aria-hidden="true" />
                     <div>
 <a href="https://cumulus.hackzogtum-coburg.de/apps/calendar/p/YdJDi9ik8jRABobq" 
                  className="calendar-link" target="_blank" rel="noopener noreferrer">
