@@ -3,4 +3,7 @@ steps:
     image: node
     commands:
       - npm ci
+  - name: Build
+    image: node
+    commands:
       - npm run build
