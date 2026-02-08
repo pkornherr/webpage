@@ -12,7 +12,7 @@ steps:
   - name: Compress Build Folder
     image: node:20
     commands:
-      - tar --ignore-failed-read -czf hackzogtum-webpage.tar.gz .
+      - tar -czf hackzogtum-webpage.tar.gz --exclude=*.tar.gz .
 
   - name: Prepare SSH Connection
     image: node:20
