@@ -15,21 +15,19 @@ steps:
       - mkdir -p artifacts
       - tar -czf artifacts/hackzogtum-webpage.tar.gz --exclude=artifacts .
 
-  - name: Prepare SSH Connection
+  - name: SSH Connection
     image: node:20
     commands:
       - mkdir -p ~/.ssh
       - printf '%s' "$${TOKEN_ENV}" > ~/.ssh/id_ed25519
       - chmod 600 ~/.ssh/id_ed25519
       - ssh-keyscan -H 95.217.86.151 >> ~/.ssh/known_hosts
+      - cat artifacts/hackzogtum-webpage.tar.gz | ssh -i ~/.ssh/id_ed25519 website@95.217.86.151
     environment:
        TOKEN_ENV:
          from_secret: SSH-Key
   
-  - name: Publish
-    image: node:20
-    commands:
-      - cat hackzogtum-webpage.tar.gz | ssh -i ~/.ssh/id_ed25519 website@95.217.86.151
+
     
 
 when:
