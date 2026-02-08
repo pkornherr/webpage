@@ -12,7 +12,8 @@ steps:
   - name: Compress Build Folder
     image: node:20
     commands:
-      - tar -czf hackzogtum-webpage.tar.gz --exclude=*.tar.gz .
+      - mkdir -p artifacts
+      - tar -czf artifacts/hackzogtum-webpage.tar.gz --exclude=artifacts .
 
   - name: Prepare SSH Connection
     image: node:20
