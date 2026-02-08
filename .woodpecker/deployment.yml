@@ -8,17 +8,11 @@ steps:
     image: node:20
     commands:
       - npm run build
-
-  - name: prepare Build Folder
-    image: node:20
-    commands:
-      - mkdir deploy
-      - cp -r .next public package.json package-lock.json deploy/
   
   - name: Compress Build Folder
     image: node:20
     commands:
-      - tar -czf hackzogtum-webpage.tar.gz deploy/
+      - tar --ignore-failed-read -czf hackzogtum-webpage.tar.gz .
 
   - name: Prepare SSH Connection
     image: node:20
@@ -30,6 +24,11 @@ steps:
     environment:
        TOKEN_ENV:
          from_secret: SSH-Key
+  
+  - name: Publish
+    image: node:20
+    commands:
+      - cat hackzogtum-webpage.tar.gz | ssh -i ~/.ssh/id_ed25519 website@95.217.86.151
     
 
 when:
