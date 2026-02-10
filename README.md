@@ -1,4 +1,6 @@
 # webpage
+![Pipeline Status](https://ci.codeberg.org/api/badges/16256/status.svg)
+
 Repository for the Hackzogtum website. This is a Next.js project.
 
 ## Build and run
